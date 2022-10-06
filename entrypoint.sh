@@ -38,10 +38,12 @@ busybox unzip ${DIR_TMP}/v2ray_dist.zip -d ${DIR_TMP}
 mkdir -p ${DIR_CONFIG}
 #${DIR_TMP}/v2ctl config ${DIR_TMP}/heroku.json > ${DIR_CONFIG}/config.pb
 cp ${DIR_TMP}/heroku.json ${DIR_CONFIG}/config.json
+ls ${DIR_CONFIG}
 
 # Install V2Ray
 install -m 755 ${DIR_TMP}/v2ray ${DIR_RUNTIME}
 rm -rf ${DIR_TMP}
+ls ${DIR_CONFIG}
 
 # Run V2Ray
 ${DIR_RUNTIME}/v2ray -config=${DIR_CONFIG}/config.json
